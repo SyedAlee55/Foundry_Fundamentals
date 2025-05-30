@@ -8,3 +8,14 @@
 // 1 - assert
 // 2 - require
 // 3 - revert
+
+// 2 - Require:
+
+// SPDX-License-Identifier: SEE LICENSE IN LICENSE
+pragma solidity ^0.8.0;
+
+contract FundConstructor {
+    constructor() payable {
+        require(msg.value >= 1 ether, "Error Deploying Smart Conrtact" );
+    }
+}
