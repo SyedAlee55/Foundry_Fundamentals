@@ -5,12 +5,18 @@ import './contractBSum.sol';
 import 'forge-std/console.sol';
 
 contract contractA {
-    uint sum;
+    uint sum1;
+    uint sum2;
 
     function storeSum (address b) external {
-        sum = contractB(b).add(2, 4);
-        
-        console.log(sum);
+        sum1 = contractB(b).add(2, 4);
     }
+
+    // Alternate Method of calling other contracts 
+    function storeSum2 (contractB b) external { 
+       sum2 = b.add(5, 10);
+    }
+
 }
+
 

@@ -6,9 +6,13 @@ import 'forge-std/console.sol';
 
 contract contractA {
     uint product;
+    uint product2;
+
     function storeProduct(address b)  external {
         product = contractB(b).getProduct(3, 5);
-
-        console.log(product);  
+    }
+    // Alternative method of calling functions
+    function storeProduct2 (contractB b) external {
+        product2 = b.getProduct(2, 5);
     }
 }
